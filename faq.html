@@ -1,0 +1,623 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="home.css" />
+    <script src="index.js"></script>
+    <!--tailwind meta tag -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!--tailwind meta tag -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <script>
+        (function(w, d, u) {
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = u + '?' + (Date.now() / 60000 | 0);
+            var h = d.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(s, h);
+        })(window, document, 'https://cdn.bitrix24.com/b20576497/crm/site_button/loader_1_ut49ge.js');
+    </script>
+    <!--favicon -->
+    <link rel="icon" type="favicon" href="apple-touch-icon.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+        <title>
+            FAQ 
+        </title>
+        <style>
+
+/*.faq-section {
+    background: #fdfdfd;
+    min-height: 100vh;
+    padding: 10vh 0 0;
+}
+.faq-title h2 {
+  position: relative;
+  margin-bottom: 45px;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+}
+.faq-title h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 2px;
+    background: #E91E63;
+    bottom: -25px;
+    margin-left: -30px;
+}
+.faq-title p {
+  padding: 0 190px;
+  margin-bottom: 10px;
+}
+
+.faq {
+  background: #FFFFFF;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+
+.faq .card {
+  border: none;
+  background: none;
+  border-bottom: 1px dashed #CEE1F8;
+}
+
+.faq .card .card-header {
+  padding: 0px;
+  border: none;
+  background: none;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.faq .card .card-header:hover {
+    background: rgba(233, 30, 99, 0.1);
+    padding-left: 10px;
+}
+.faq .card .card-header .faq-title {
+  width: 100%;
+  text-align: left;
+  padding: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #3B566E;
+  text-decoration: none !important;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.faq .card .card-header .faq-title .badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 14px;
+  float: left;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  background: #E91E63;
+  color: #fff;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.faq .card .card-body {
+  padding: 30px;
+  padding-left: 35px;
+  padding-bottom: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #6F8BA4;
+  line-height: 28px;
+  letter-spacing: 1px;
+  border-top: 1px solid #F3F8FF;
+}
+
+.faq .card .card-body p {
+  margin-bottom: 14px;
+}
+
+@media (max-width: 991px) {
+  .faq {
+    margin-bottom: 30px;
+  }
+  .faq .card .card-header .faq-title {
+    line-height: 26px;
+    margin-top: 10px;
+  }
+}*/
+/*.panel-title > a:before {
+    float: right !important;
+    font-family: FontAwesome;
+    content:"\f068";
+    padding-right: 5px;
+}
+
+.panel-title > a.collapsed:before {
+    float: right !important;
+    content:"\f067";
+}
+.panel-title > a:hover, 
+.panel-title > a:active, 
+.panel-title > a:focus  {
+    text-decoration:none;
+}
+.panel-heading {
+    padding: 20px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.panel {
+    margin-bottom: 20px !important;
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: 15px 16px 13px 8px rgb(4 4 4 / 5%);
+}
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #00bcd4;
+    text-align: center;
+    color: #fff;
+}*/
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+/* {
+  font-family: Lato, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+}*/
+
+.wrapper {
+  width: 60%;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.container {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px 0 rgb(0,0,0,0.25);
+  margin: 20px 0;
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 20px 80px 20px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.question::after {
+  content: "\002B";
+  font-size: 2.2rem;
+  position: absolute;
+  right: 20px;
+  transition: 0.2s;
+}
+
+.question.active::after {
+  transform: rotate(45deg);
+}
+
+.answercont {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.answer {
+  padding: 0 20px 20px;
+  line-height: 1.5rem;
+}
+
+.question.active + .answercont {
+}
+
+@media screen and (max-width: 790px){
+  html {
+    font-size: 14px;
+  }
+  .wrapper {
+  width: 80%;
+}
+}
+
+#app{
+  text-align:center;
+  font-size:50px;
+  background-image: linear-gradient(
+    -225deg,
+    #6148BF 0%,
+    #6148BF 29%,
+    #6148BF 67%,
+    #6148BF 100%
+  );
+  background-clip:border-box;
+   text-fill-color: transparent;
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+        </style>
+    </head>
+    <body>
+        <header>                                                        
+            <div id="brand"><a href="home.html">Web Master</a></div>
+            <nav>
+                <ul>
+                 
+              
+                    
+                </ul>
+            </nav>
+            <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <ul class="mobile-menu">
+                  
+              
+    
+                    <li><a href="">Become Tutor</a></li>
+               
+                </ul>
+            </div>
+        </header>
+        <!--header over -->
+        
+        <!--<section class="faq-section">
+            <div class="container">
+              <div class="row">
+                                <!-- ***** FAQ Start ***** 
+                                <div class="col-md-6 offset-md-3">
+            
+                                    <div class="faq-title text-center pb-3">
+                                        <h2>FAQ</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 offset-md-3">
+                                    <div class="faq" id="accordion">
+                                        <div class="card">
+                                            <div class="card-header" id="faqHeading-1">
+                                                <div class="mb-0">
+                                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1">
+                                                        <span class="badge">1</span>What is Lorem Ipsum?
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqHeading-2">
+                                                <div class="mb-0">
+                                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2" data-aria-expanded="false" data-aria-controls="faqCollapse-2">
+                                                        <span class="badge">2</span> Where does it come from?
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqHeading-3">
+                                                <div class="mb-0">                                                  <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-3" data-aria-expanded="false" data-aria-controls="faqCollapse-3">
+                                                        <span class="badge">3</span>Why do we use it?
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqHeading-4">
+                                                <div class="mb-0">
+                                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-4" data-aria-expanded="false" data-aria-controls="faqCollapse-4">
+                                                        <span class="badge">4</span> Where can I get some?
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqHeading-5">
+                                                <div class="mb-0">
+                                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-5" data-aria-expanded="false" data-aria-controls="faqCollapse-5">
+                                                        <span class="badge">5</span> What is Lorem Ipsum?
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-5" class="collapse" aria-labelledby="faqHeading-5" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqHeading-6">
+                                                <div class="mb-0">
+                                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-6" data-aria-expanded="false" data-aria-controls="faqCollapse-6">
+                                                        <span class="badge">6</span> Where does it come from?
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-6" class="collapse" aria-labelledby="faqHeading-6" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqHeading-7">
+                                                <div class="mb-0">
+                                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-7" data-aria-expanded="false" data-aria-controls="faqCollapse-7">
+                                                        <span class="badge">7</span> Why do we use it?
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-7" class="collapse" aria-labelledby="faqHeading-7" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            </section>-->
+                            <!--<div class="container">
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                          <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                             What is Data Structure?
+                                            </a>
+                                          </h4>
+                              
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                          <div class="panel-body">Data structure is a fundamental concept of any programming language, essential for algorithmic design.
+                              </div>
+                                        </div>
+                                      </div>
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                          <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                              Benefits of Learning Data Structures
+                                            </a>
+                                          </h4>
+                              
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                          <div class="panel-body">Any given problem has constraints on how fast the problem should be solved (time) and how much less resources the problem consumes(space). That is, a problem is constrained by the space and time complexity within which it has to be solved efficiently.
+                              </div>
+                                        </div>
+                                      </div>
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                          <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                              What is an array?
+                                            </a>
+                                          </h4>
+                              
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                          <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <h1>FAQs</h1>--><br><br>
+                              <section class="text-gray-600 body-font" style="background-color: #fff6e9;">
+                                <!--<h1 style="font-size:40px;color:#6148BF;text-align: center !important;padding:3px;" class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"><b>FAQ</b></h1>-->
+                                <div id="app"></div>
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+<script>
+  var app = document.getElementById('app');
+
+var typewriter = new Typewriter(app, {
+    loop: true
+});
+
+typewriter.typeString('<strong>FAQ</strong>')
+    .pauseFor(2000)
+    .deleteAll()
+    .typeString('Frequently Asked Questions')
+    .pauseFor(2000)
+    .deleteAll()
+    .typeString('Web Master')
+    .pauseFor(2000)
+    .start();
+</script>
+                                <div class=" mx-auto flex px-89 py-24 items-center justify-center flex-col" style="background-color: #fff6e9; 
+                                color: black;
+                                /* border-radius: 20px; */
+                                /* box-shadow: 0 5px 10px 0 rgb(0,0,0,0.25); */
+                                margin: 20px 0;padding-left: 200px;">
+                                  <div class="text-center lg:w-2/3 " style="background-color: #fff6e9;">
+                                 
+                                  
+                                      <div>
+                                        <div class="wrapper  ">
+                                          
+                                          <div class="container">
+                                            <div class="question">
+                                              How do I verify my email?
+                                            </div>
+                                            <div class="answercont">
+                                              <div class="answer">
+                                                Click the link in the verification email from verify@codepen.io (be sure to check your spam folder or other email tabs if it's not in your inbox).
+                                        
+                                        Or, send an email with the subject "Verify" to verify@codepen.io from the email address you use for your CodePen account.<br><br>
+                                        
+                                        <a href="https://blog.codepen.io/documentation/features/email-verification/#how-do-i-verify-my-email-2">How to Verify Email Docs</a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          
+                                            <div class="container">
+                                            <div class="question">
+                                              My Pen loads infinitely or crashes the browser.
+                                            </div>
+                                            <div class="answercont">
+                                              <div class="answer">
+                                                It's likely an infinite loop in JavaScript that we could not catch. To fix, add ?turn_off_js=true to the end of the URL (on any page, like the Pen or Project editor, your Profile page, or the Dashboard) to temporarily turn off JavaScript. When you're ready to run the JavaScript again, remove ?turn_off_js=true and refresh the page.<br><br>
+                                        
+                                        <a href="https://blog.codepen.io/documentation/features/turn-off-javascript-in-previews/">How to Disable JavaScript Docs</a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          
+                                              <div class="container">
+                                            <div class="question">
+                                              How do I contact the creator of a Pen?
+                                            </div>
+                                            <div class="answercont">
+                                              <div class="answer">
+                                                You can leave a comment on any public Pen. Click the "Comments" link in the Pen editor view, or visit the Details page.<br><br>
+                                        
+                                        <a href="https://blog.codepen.io/documentation/faq/how-do-i-contact-the-creator-of-a-pen/">How to Contact Creator of a Pen Docs</a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                         
+                                          <div class="container">
+                                            <div class="question">
+                                              What version of [library] does CodePen use?
+                                            </div>
+                                            <div class="answercont">
+                                              <div class="answer">
+                                                We have our current list of library versions <a href="https://codepen.io/versions">here</a>
+                                           
+                                              </div>
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="container">
+                                            <div class="question">
+                                              What are forks?
+                                            </div>
+                                            <div class="answercont">
+                                              <div class="answer">
+                                                A fork is a complete copy of a Pen or Project that you can save to your own account and modify. Your forked copy comes with everything the original author wrote, including all of the code and any dependencies.<br><br>
+                                        
+                                        <a href="https://blog.codepen.io/documentation/features/forks/">Learn More About Forks</a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          
+                                        </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+                                
+                              
+                             <!-- <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+                              <script>
+                                kofiWidgetOverlay.draw('mohamedghulam', {
+                                  'type': 'floating-chat',
+                                  'floating-chat.donateButton.text': 'Support me',
+                                  'floating-chat.donateButton.background-color': '#323842',
+                                  'floating-chat.donateButton.text-color': '#fff'
+                                });
+                              </script>-->
+    </body>
+    <script>
+        let question = document.querySelectorAll(".question");
+
+question.forEach(question => {
+  question.addEventListener("click", event => {
+    const active = document.querySelector(".question.active");
+    if(active && active !== question ) {
+      active.classList.toggle("active");
+      active.nextElementSibling.style.maxHeight = 0;
+    }
+    question.classList.toggle("active");
+    const answer = question.nextElementSibling;
+    if(question.classList.contains("active")){
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = 0;
+    }
+  })
+})
+
+    </script>
+</html>

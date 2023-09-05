@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> LOGICAL THINKING || PAID COURSE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="favicon" href="assets/logo_newwwwwwwwwwww-removebg-preview.png" />
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="index.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!--favicon -->
+    <link rel="icon" type="favicon" href="apple-touch-icon.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!--favicon over-->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .quizbox-3schools {
+            max-width: 800px;
+            margin: 15px auto;
+            padding: 40px 29px;
+            text-align: center;
+            border-radius: 10px;
+            border: 2px solid #6148BF;
+            background-color: #FFF6E9;
+            box-shadow: 0 0 4px #6148BF;
+        }
+        
+        .quiz-home-box {
+            display: none;
+        }
+        
+        .quiz-home-box.show {
+            display: block;
+        }
+        
+        .quizbox-3schools .qbtn {
+            padding: 6px 25px;
+            color: #ffffff;
+            background-color: #6148BF;
+            border: 2px solid white;
+            font-size: 14px;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            white-space: nowrap;
+            margin: 0 10px;
+        }
+        
+        .quizbox-3schools .qbtn:focus {
+            outline: none;
+        }
+        
+        .quiz-box {
+            display: none;
+        }
+        
+        .quiz-box.show {
+            display: block;
+        }
+        
+        .quiz-box .setting-3schools {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 30px;
+        }
+        
+        .setting-3schools .quiz-time {
+            width: 50%;
+            text-align: left;
+        }
+        
+        .quiz-box .time-up-text {
+            color: #6148BF;
+            font-weight: 500;
+            display: none;
+            margin: 0 auto 30px;
+        }
+        
+        .time-up-text.show {
+            display: block;
+            animation: fadeInOut 1s linear infinite;
+        }
+        
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        .quiz-box .setting-3schools .quiz-time .remaining-time,
+        .score-text {
+            height: 30px;
+            width: 100%;
+            color: #6148BF;
+            border: 2px solid #6148BF;
+            background-color: #FFF6E9;
+            font-weight: 600;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .quiz-box .setting-3schools .quiz-time .remaining-time.less-time {
+            color: #d23723;
+            border-color: #d23723;
+        }
+        
+        .setting-3schools .score-board {
+            width: 50%;
+            text-align: right;
+        }
+        
+        .setting-3schools .score-board .correct-answer {
+            font-weight: 800;
+        }
+        
+        .quiz-box .question-box {
+            background-color: #FFF6E9;
+            padding: 25px 30px;
+            margin-top: 35px;
+            border-radius: 10px;
+            border: 2px solid #000000;
+            text-align: center;
+            position: relative;
+        }
+        
+        .quiz-box .question-box .current-question-num {
+            height: 55px;
+            width: 90px;
+            background-color: #FFF6E9;
+            border: 2px solid #6148BF;
+            font-size: 20px;
+            font-weight: 800;
+            color: #6148BF;
+            border-radius: 8px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: -95px;
+            left: 50%;
+            margin-left: -35px;
+            z-index: 1;
+        }
+        
+        .quiz-box .question-box .question-text {
+            font-size: 22px;
+            font-family: 'Concert One', cursiv;
+            color: #000000;
+        }
+        
+        .quizbox-3schools .uInfo {
+            margin-bottom: 15px;
+        }
+        
+        .quizbox-3schools input[type="text"] {
+            width: calc(50% - 6px);
+            border-radius: 2px;
+            border: none;
+            outline: none;
+            padding: 3px;
+            text-align: center;
+            background-color: #FFF6E9;
+            color: #6148BF;
+            box-shadow: 1px 0 5px rgba(60, 60, 60, 0.5);
+        }
+        
+        .quiz-box .answerBox {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .answerBox .option {
+            background-color: #FFF6E9;
+            flex-basis: calc(50% - 20px);
+            max-width: calc(50% - 20px);
+            margin-top: 30px;
+            padding: 7px 13px;
+            font-size: 20px;
+            color: #6148BF;
+            box-shadow: 0 0 4px rgba(60, 60, 20, .3);
+            border-radius: 5px;
+            text-align: left;
+            cursor: pointer;
+            position: relative;
+            animation: zoomIn .4s linear forwards;
+            opacity: 0;
+        }
+        
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.7);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .answerBox .option::before {
+            content: '\25A3';
+            position: absolute;
+            height: 18px;
+            width: 18px;
+            right: 15px;
+            top: 8px;
+        }
+        
+        .answerBox .option.already-answered {
+            pointer-events: none;
+        }
+        
+        .answerBox .option.show-correct {
+            background-color: #11c466;
+            border-color: #059e4c;
+            color: #ffffff;
+            animation: zoomIn 1.9s linear forwards;
+        }
+        
+        .answerBox .option.show-correct::before {
+            content: '\2714';
+        }
+        
+        .answerBox .option.correct {
+            background-color: #11c466;
+            border-color: #059e4c;
+            color: #ffffff;
+            opacity: 1;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .answerBox .option.correct::before {
+            content: '\2714';
+        }
+        
+        .answerBox .option.wrong {
+            background-color: #f85943;
+            border-color: #d23723;
+            color: #ffffff;
+            opacity: 1;
+            animation: shake 1.7s infinite;
+        }
+        
+        .answerBox .option.wrong::before {
+            content: '\2573';
+        }
+        
+        @keyframes shake {
+            0%,
+            30%,
+            50% {
+                transform: translateX(10px);
+            }
+            20%,
+            40% {
+                transform: translateX(-10px);
+            }
+            60% {
+                transform: translateX(-7px);
+            }
+            70% {
+                transform: translateX(7px);
+            }
+            80% {
+                transform: translateX(-4px);
+            }
+            90% {
+                transform: translateX(4px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
+        
+        .quiz-box .answer-description {
+            background-color: #FFF6E9;
+            border: 2px solid #6148BF;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            color: #6148BF;
+            display: none;
+        }
+        
+        .quiz-box .answer-description.show {
+            display: block;
+        }
+        
+        .quiz-box .next-question {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .see-result-btn,
+        .next-question-btn {
+            display: none;
+        }
+        
+        .see-result-btn.show,
+        .next-question-btn.show {
+            display: inline-block;
+        }
+        
+        .quiz-over-box {
+            text-align: center;
+            display: none;
+        }
+        
+        .quiz-over-box.show {
+            display: block;
+        }
+        
+        .quiz-over-box h2 {
+            font-size: 20px;
+            font-family: 'serif', cursive;
+            color: #6148BF;
+            margin: 0px 3px 20px;
+            padding: 0;
+        }
+        
+        .quiz-over-box h4 {
+            font-size: 25px;
+            font-weight: normal;
+            color: #6148BF;
+            margin: 15px 0 20px;
+        }
+        
+        .quiz-over-box h4 span {
+            font-weight: 800;
+            color: #6148BF;
+        }
+        
+        .start-again-quiz-btn,
+        .go-home-btn {
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 767px) {
+            .quizbox-3schools .qbtn {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+            .quiz-box .question-box {
+                padding: 30px 5px;
+                margin-top: 10px;
+            }
+            .quiz-box .question-box .question-text {
+                font-size: 16px;
+            }
+            .quizbox-3schools {
+                padding: 14px 10px 20px;
+            }
+            .quiz-box .setting-3schools .quiz-time {
+                max-width: calc(50% - 40px);
+                font-size: 18px;
+            }
+            .quiz-box .setting-3schools .score-board {
+                max-width: calc(50% - 40px);
+                font-size: 18px;
+            }
+            .quiz-box .question-box .current-question-num {
+                height: 30px;
+                width: 85px;
+                line-height: 30px;
+                top: -14px;
+                margin-left: -35px;
+                font-size: 16px;
+            }
+            .quiz-box .answerBox .option {
+                flex-basis: 100%;
+                max-width: 100%;
+                font-size: 16px;
+                margin-top: 15px;
+            }
+            .quiz-over-box h1 {
+                font-size: 20px;
+            }
+            .quiz-over-box h4 {
+                font-size: 20px;
+                margin: 10px 0 15px;
+            }
+        }
+        
+        #brand {
+            font-weight: bold;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        
+        #brand a {
+            color: #6148BF;
+        }
+        
+        body {
+            background-color: #FFF6E9;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        header a {
+            text-decoration: none;
+        }
+        
+        header {
+            padding: 0 20px;
+            background-color: white;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <header>
+        <div id="brand"><a href="/home.html">Web Master</a></div>
+
+    </header><br><br><br>
+    <section class="text-gray-600 body-font relative" style="user-select: auto;">
+        <div class="flex flex-col text-center w-full mb-12" style="user-select: auto;">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" style="user-select: auto;color:#6148BF">Logical Thinking </h1>
+        </div>
+    </section>
+
+    <div class="quiz-home-box quizbox-3schools show">
+        <div class="uInfo"> <input type="text" class="u-name" placeholder="Enter Your Name" required/> </div><br><br>
+        <button class="start-quiz-btn qbtn" type="button">Start The Test</button>
+        <p style="visibility: hidden;">Created By <a id="quizBya" href="https://quizgenerator.3schools.in/2021/03/multiple-choice-quiz-generator-result-score.html" target="_blank">Html Quiz Generator</a></p>
+    </div>
+    <div class="quiz-box quizbox-3schools">
+        <p class="time-up-text">Tme's Up</p>
+        <div class="setting-3schools">
+            <div class="quiz-time">
+                <div class="remaining-time"></div>
+            </div>
+            <div class="score-board">
+                <div class="score-text">score : <span class="correct-answer"> </span></div>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="current-question-num"></div>
+            <div class="question-text"></div>
+        </div>
+        <div class="answerBox"></div>
+        <div class="answer-description"></div>
+        <div class="next-question"><button class="next-question-btn qbtn" type="button">Next question</button><button class="see-result-btn qbtn" type="button">See Your Result</button></div>
+    </div>
+    <div class="quiz-over-box quizbox-3schools">
+        <h2 class="apuRM"></h2>
+        <h4>Name : <span id="apuName">Apu</span></h4>
+        <h4>Total Questions: <span class="total-questions"></span></h4>
+        <h4> Correct: <span class="total-correct"></span> <em>|</em> Wrong: <span class="total-wrong"></span> </h4>
+        <h4>Attempt: <span class="total-attempt"></span> <em>|</em> Percentage: <span class="percentage"></span></h4><button class="start-again-quiz-btn qbtn" type="button">Start Again</button><button class="go-home-btn qbtn" type="button">Go To Home</button></div>
+    <script>
+        const _0xdcee41 = _0xe870;
+        (function(_0x25364a, _0x184c41) {
+            const _0x1a95bb = _0xe870,
+                _0x330415 = _0x25364a();
+            while (!![]) {
+                try {
+                    const _0x1951d5 = parseInt(_0x1a95bb(0xc9)) / 0x1 * (-parseInt(_0x1a95bb(0x9c)) / 0x2) + parseInt(_0x1a95bb(0xbc)) / 0x3 + parseInt(_0x1a95bb(0x9e)) / 0x4 + parseInt(_0x1a95bb(0xa1)) / 0x5 + parseInt(_0x1a95bb(0x95)) / 0x6 * (parseInt(_0x1a95bb(0xd5)) / 0x7) + parseInt(_0x1a95bb(0xb9)) / 0x8 * (parseInt(_0x1a95bb(0x96)) / 0x9) + -parseInt(_0x1a95bb(0x97)) / 0xa * (parseInt(_0x1a95bb(0xaf)) / 0xb);
+                    if (_0x1951d5 === _0x184c41) break;
+                    else _0x330415['push'](_0x330415['shift']());
+                } catch (_0x2fe233) {
+                    _0x330415['push'](_0x330415['shift']());
+                }
+            }
+        }(_0x3fbd, 0xf1dd8));
+        const questionText = document[_0xdcee41(0xac)](_0xdcee41(0xd0)),
+            optionBox = document[_0xdcee41(0xac)](_0xdcee41(0xa7)),
+            currentQuestionNum = document[_0xdcee41(0xac)](_0xdcee41(0xcd)),
+            answerDescription = document[_0xdcee41(0xac)]('\x2e\x61\x6e\x73\x77\x65\x72\x2d\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6f\x6e'),
+            nextQuestionBtn = document[_0xdcee41(0xac)](_0xdcee41(0x99)),
+            correctAnswers = document[_0xdcee41(0xac)](_0xdcee41(0xbf)),
+            seeResultBtn = document[_0xdcee41(0xac)](_0xdcee41(0xd8)),
+            remainingTime = document[_0xdcee41(0xac)](_0xdcee41(0x9f)),
+            timeUpText = document[_0xdcee41(0xac)](_0xdcee41(0xda)),
+            quizHomeBox = document[_0xdcee41(0xac)](_0xdcee41(0xb3)),
+            quizBox = document[_0xdcee41(0xac)](_0xdcee41(0x98)),
+            quizOverBox = document['\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72'](_0xdcee41(0xd3)),
+            startAgainQuizBtn = document[_0xdcee41(0xac)]('\x2e\x73\x74\x61\x72\x74\x2d\x61\x67\x61\x69\x6e\x2d\x71\x75\x69\x7a\x2d\x62\x74\x6e'),
+            goHomeBtn = document[_0xdcee41(0xac)](_0xdcee41(0xcf)),
+            startQuizBtn = document[_0xdcee41(0xac)](_0xdcee41(0x9b));
+        let attempt = 0x0,
+            questionIndex = 0x0,
+            score = 0x0,
+            number = 0x0,
+            myArray = [],
+            interval;
+        const quizACL = document[_0xdcee41(0xac)]('\x23\x71\x75\x69\x7a\x42\x79\x61');
+        (quizACL === null || quizACL[_0xdcee41(0xd7)] != _0xdcee41(0xb1) || quizACL['\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c'] != '\x48\x74\x6d\x6c\x20\x51\x75\x69\x7a\x20\x47\x65\x6e\x65\x72\x61\x74\x6f\x72') && (startQuizBtn['\x73\x74\x79\x6c\x65']['\x64\x69\x73\x70\x6c\x61\x79'] = _0xdcee41(0xd1));
+
+        function _0xe870(_0xe88538, _0x3bc908) {
+            const _0x3fbdc8 = _0x3fbd();
+            return _0xe870 = function(_0xe870f8, _0xc557cc) {
+                _0xe870f8 = _0xe870f8 - 0x93;
+                let _0x121410 = _0x3fbdc8[_0xe870f8];
+                return _0x121410;
+            }, _0xe870(_0xe88538, _0x3bc908);
+        }
+
+        function load() {
+            const _0x56cb03 = _0xdcee41;
+            number++, questionText[_0x56cb03(0xcb)] = qBook[questionIndex]['\x71\x75\x65\x73\x74\x69\x6f\x6e'], creatOptions(), scoreBoard(), currentQuestionNum[_0x56cb03(0xcb)] = number + _0x56cb03(0x9a) + qBook['\x6c\x65\x6e\x67\x74\x68'];
+        }
+
+        function creatOptions() {
+            const _0x2ffdd4 = _0xdcee41;
+            optionBox[_0x2ffdd4(0xcb)] = '';
+            let _0x909487 = 0.2;
+            for (let _0x5dd9c4 = 0x0; _0x5dd9c4 < qBook[questionIndex]['\x6f\x70\x74\x69\x6f\x6e\x73']['\x6c\x65\x6e\x67\x74\x68']; _0x5dd9c4++) {
+                const _0x17d7f1 = document[_0x2ffdd4(0xbe)]('\x64\x69\x76');
+                _0x17d7f1[_0x2ffdd4(0xcb)] = qBook[questionIndex]['\x6f\x70\x74\x69\x6f\x6e\x73'][_0x5dd9c4], _0x17d7f1[_0x2ffdd4(0xcc)]['\x61\x64\x64'](_0x2ffdd4(0xd2)), _0x17d7f1['\x69\x64'] = _0x5dd9c4, _0x17d7f1[_0x2ffdd4(0xc0)]['\x61\x6e\x69\x6d\x61\x74\x69\x6f\x6e\x44\x65\x6c\x61\x79'] = _0x909487 + '\x73', _0x909487 = _0x909487 + 0.2, _0x17d7f1[_0x2ffdd4(0xbb)](_0x2ffdd4(0xb2), _0x2ffdd4(0x94)), optionBox[_0x2ffdd4(0xb6)](_0x17d7f1);
+            }
+        }
+
+        function generateRandomQuestion() {
+            const _0x57361b = _0xdcee41,
+                _0x22df42 = Math[_0x57361b(0xd9)](Math[_0x57361b(0xae)]() * qBook[_0x57361b(0xc4)]);
+            let _0x3f3592 = 0x0;
+            if (myArray[_0x57361b(0xc4)] == 0x0) questionIndex = _0x22df42;
+            else {
+                for (let _0x19357b = 0x0; _0x19357b < myArray[_0x57361b(0xc4)]; _0x19357b++) {
+                    _0x22df42 == myArray[_0x19357b] && (_0x3f3592 = 0x1);
+                }
+                if (_0x3f3592 == 0x1) {
+                    generateRandomQuestion();
+                    return;
+                } else questionIndex = _0x22df42;
+            }
+            myArray[_0x57361b(0xa5)](_0x22df42), load();
+        }
+
+        function check(_0x145bcb) {
+            const _0x47161d = _0xdcee41,
+                _0x19b389 = _0x145bcb['\x69\x64'];
+            if (_0x19b389 == qBook[questionIndex][_0x47161d(0xc1)]) _0x145bcb['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74'][_0x47161d(0xc8)](_0x47161d(0xa3)), score++, scoreBoard();
+            else {
+                _0x145bcb['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74'][_0x47161d(0xc8)](_0x47161d(0xaa));
+                for (let _0x4f2662 = 0x0; _0x4f2662 < optionBox['\x63\x68\x69\x6c\x64\x72\x65\x6e'][_0x47161d(0xc4)]; _0x4f2662++) {
+                    optionBox[_0x47161d(0xa8)][_0x4f2662]['\x69\x64'] == qBook[questionIndex]['\x61\x6e\x73\x77\x65\x72'] && optionBox[_0x47161d(0xa8)][_0x4f2662][_0x47161d(0xcc)][_0x47161d(0xc8)](_0x47161d(0xa0));
+                }
+            }
+            attempt++, disableOptions(), showAnswerDescription(), showNextQuestionBtn(), stopTimer(), number == qBook[_0x47161d(0xc4)] && quizOver();
+        }
+
+        function timeIsUp() {
+            const _0x4b0c97 = _0xdcee41;
+            showTimeUpText();
+            for (let _0x26a9f2 = 0x0; _0x26a9f2 < optionBox[_0x4b0c97(0xa8)][_0x4b0c97(0xc4)]; _0x26a9f2++) {
+                optionBox['\x63\x68\x69\x6c\x64\x72\x65\x6e'][_0x26a9f2]['\x69\x64'] == qBook[questionIndex][_0x4b0c97(0xc1)] && optionBox['\x63\x68\x69\x6c\x64\x72\x65\x6e'][_0x26a9f2][_0x4b0c97(0xcc)][_0x4b0c97(0xc8)]('\x73\x68\x6f\x77\x2d\x63\x6f\x72\x72\x65\x63\x74');
+            }
+            disableOptions(), showAnswerDescription(), showNextQuestionBtn(), number == qBook['\x6c\x65\x6e\x67\x74\x68'] && quizOver();
+        }
+
+        function disableOptions() {
+            const _0x49fa4f = _0xdcee41;
+            for (let _0x40023e = 0x0; _0x40023e < optionBox[_0x49fa4f(0xa8)]['\x6c\x65\x6e\x67\x74\x68']; _0x40023e++) {
+                optionBox[_0x49fa4f(0xa8)][_0x40023e][_0x49fa4f(0xcc)][_0x49fa4f(0xc8)](_0x49fa4f(0xba));
+            }
+        }
+
+        function showAnswerDescription() {
+            const _0x278c67 = _0xdcee41;
+            typeof qBook[questionIndex][_0x278c67(0xdb)] !== _0x278c67(0xb4) && (answerDescription[_0x278c67(0xcc)][_0x278c67(0xc8)](_0x278c67(0xc2)), answerDescription[_0x278c67(0xcb)] = qBook[questionIndex][_0x278c67(0xdb)]);
+        }
+
+        function hideAnswerDescription() {
+            const _0x10414a = _0xdcee41;
+            answerDescription['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74'][_0x10414a(0xb5)](_0x10414a(0xc2)), answerDescription[_0x10414a(0xcb)] = '';
+        }
+
+        function showNextQuestionBtn() {
+            const _0x48afbf = _0xdcee41;
+            nextQuestionBtn[_0x48afbf(0xcc)]['\x61\x64\x64'](_0x48afbf(0xc2));
+        }
+
+        function hideNextQuestionBtn() {
+            const _0x533772 = _0xdcee41;
+            nextQuestionBtn['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74'][_0x533772(0xb5)]('\x73\x68\x6f\x77');
+        }
+
+        function showTimeUpText() {
+            const _0x1f98b0 = _0xdcee41;
+            timeUpText[_0x1f98b0(0xcc)][_0x1f98b0(0xc8)]('\x73\x68\x6f\x77');
+        }
+
+        function _0x3fbd() {
+            const _0x299f8e = ['\x2e\x75\x2d\x72\x6f\x6c\x6c', '\x33\x38\x32\x32\x31\x38\x30\x6d\x58\x6f\x67\x72\x4b', '\x2e\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x2d\x74\x69\x6d\x65', '\x73\x68\x6f\x77\x2d\x63\x6f\x72\x72\x65\x63\x74', '\x37\x31\x33\x36\x32\x32\x30\x59\x66\x4b\x53\x4c\x42', '\x2e\x74\x6f\x74\x61\x6c\x2d\x71\x75\x65\x73\x74\x69\x6f\x6e\x73', '\x63\x6f\x72\x72\x65\x63\x74', '\x2e\x74\x6f\x74\x61\x6c\x2d\x77\x72\x6f\x6e\x67', '\x70\x75\x73\x68', '\x45\x78\x63\x65\x6c\x6c\x65\x6e\x74\x20', '\x2e\x61\x6e\x73\x77\x65\x72\x42\x6f\x78', '\x63\x68\x69\x6c\x64\x72\x65\x6e', '\x23\x61\x70\x75\x4e\x61\x6d\x65', '\x77\x72\x6f\x6e\x67', '\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72', '\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72', '\x74\x6f\x46\x69\x78\x65\x64', '\x72\x61\x6e\x64\x6f\x6d', '\x31\x33\x30\x39\x57\x4f\x57\x62\x4b\x54', '\x2e\x74\x6f\x74\x61\x6c\x2d\x61\x74\x74\x65\x6d\x70\x74', '\x68\x74\x74\x70\x73\x3a\x2f\x2f\x71\x75\x69\x7a\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x2e\x33\x73\x63\x68\x6f\x6f\x6c\x73\x2e\x69\x6e\x2f\x32\x30\x32\x31\x2f\x30\x33\x2f\x6d\x75\x6c\x74\x69\x70\x6c\x65\x2d\x63\x68\x6f\x69\x63\x65\x2d\x71\x75\x69\x7a\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x2d\x72\x65\x73\x75\x6c\x74\x2d\x73\x63\x6f\x72\x65\x2e\x68\x74\x6d\x6c', '\x6f\x6e\x63\x6c\x69\x63\x6b', '\x2e\x71\x75\x69\x7a\x2d\x68\x6f\x6d\x65\x2d\x62\x6f\x78', '\x75\x6e\x64\x65\x66\x69\x6e\x65\x64', '\x72\x65\x6d\x6f\x76\x65', '\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64', '\x47\x6f\x6f\x64\x20', '\x2c\x20\x44\x6f\x6e\x27\x74\x20\x53\x74\x6f\x70\x20\x53\x74\x75\x64\x79\x69\x6e\x67\x2e', '\x34\x30\x52\x42\x48\x77\x68\x51', '\x61\x6c\x72\x65\x61\x64\x79\x2d\x61\x6e\x73\x77\x65\x72\x65\x64', '\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65', '\x33\x31\x33\x37\x38\x39\x35\x6a\x61\x75\x62\x69\x59', '\x56\x65\x72\x79\x20\x67\x6f\x6f\x64\x20', '\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74', '\x2e\x63\x6f\x72\x72\x65\x63\x74\x2d\x61\x6e\x73\x77\x65\x72', '\x73\x74\x79\x6c\x65', '\x61\x6e\x73\x77\x65\x72', '\x73\x68\x6f\x77', '\x2e\x70\x65\x72\x63\x65\x6e\x74\x61\x67\x65', '\x6c\x65\x6e\x67\x74\x68', '\x2e\x61\x70\x75\x52\x4d', '\x2c\x20\x59\x6f\x75\x20\x4e\x65\x65\x64\x20\x54\x6f\x20\x44\x6f\x20\x42\x65\x74\x74\x65\x72\x20\x21', '\x4e\x6f\x74\x20\x67\x6f\x6f\x64\x20', '\x61\x64\x64', '\x32\x6f\x72\x54\x45\x4a\x67', '\x2c\x20\x59\x6f\x75\x20\x48\x61\x76\x65\x20\x52\x65\x61\x6c\x6c\x79\x20\x47\x6f\x6f\x64\x20\x4b\x6e\x6f\x77\x6c\x65\x64\x67\x65\x20\x2e', '\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c', '\x63\x6c\x61\x73\x73\x4c\x69\x73\x74', '\x2e\x63\x75\x72\x72\x65\x6e\x74\x2d\x71\x75\x65\x73\x74\x69\x6f\x6e\x2d\x6e\x75\x6d', '\x23\x75\x52\x6f\x6c\x6c', '\x2e\x67\x6f\x2d\x68\x6f\x6d\x65\x2d\x62\x74\x6e', '\x2e\x71\x75\x65\x73\x74\x69\x6f\x6e\x2d\x74\x65\x78\x74', '\x6e\x6f\x6e\x65', '\x6f\x70\x74\x69\x6f\x6e', '\x2e\x71\x75\x69\x7a\x2d\x6f\x76\x65\x72\x2d\x62\x6f\x78', '\x63\x6c\x69\x63\x6b', '\x31\x33\x38\x35\x35\x30\x33\x37\x77\x6f\x4d\x6b\x55\x68', '\x76\x61\x6c\x75\x65', '\x68\x72\x65\x66', '\x2e\x73\x65\x65\x2d\x72\x65\x73\x75\x6c\x74\x2d\x62\x74\x6e', '\x66\x6c\x6f\x6f\x72', '\x2e\x74\x69\x6d\x65\x2d\x75\x70\x2d\x74\x65\x78\x74', '\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6f\x6e', '\x2e\x74\x6f\x74\x61\x6c\x2d\x63\x6f\x72\x72\x65\x63\x74', '\x63\x68\x65\x63\x6b\x28\x74\x68\x69\x73\x29', '\x36\x5a\x74\x48\x67\x42\x4b', '\x31\x39\x36\x32\x39\x39\x39\x49\x67\x4f\x6b\x46\x6a', '\x33\x31\x34\x30\x32\x30\x50\x55\x43\x4e\x6d\x55', '\x2e\x71\x75\x69\x7a\x2d\x62\x6f\x78', '\x2e\x6e\x65\x78\x74\x2d\x71\x75\x65\x73\x74\x69\x6f\x6e\x2d\x62\x74\x6e', '\x20\x2f\x20', '\x2e\x73\x74\x61\x72\x74\x2d\x71\x75\x69\x7a\x2d\x62\x74\x6e', '\x31\x37\x37\x31\x30\x38\x32\x77\x62\x78\x78\x6a\x6d'];
+            _0x3fbd = function() {
+                return _0x299f8e;
+            };
+            return _0x3fbd();
+        }
+
+        function hideTimeUpText() {
+            const _0x2b0858 = _0xdcee41;
+            timeUpText['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74'][_0x2b0858(0xb5)](_0x2b0858(0xc2));
+        }
+
+        function scoreBoard() {
+            const _0x19fa66 = _0xdcee41;
+            correctAnswers[_0x19fa66(0xcb)] = score;
+        }
+        nextQuestionBtn[_0xdcee41(0xab)](_0xdcee41(0xd4), nextQuestion);
+
+        function nextQuestion() {
+            generateRandomQuestion(), hideNextQuestionBtn(), hideAnswerDescription(), hideTimeUpText(), addTimer();
+        }
+
+        function quizResult() {
+            const _0xf6953c = _0xdcee41;
+            document['\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72'](_0xf6953c(0xa2))[_0xf6953c(0xcb)] = qBook[_0xf6953c(0xc4)], document[_0xf6953c(0xac)](_0xf6953c(0xb0))['\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c'] = attempt, document[_0xf6953c(0xac)](_0xf6953c(0x93))[_0xf6953c(0xcb)] = score, document[_0xf6953c(0xac)](_0xf6953c(0xa4))[_0xf6953c(0xcb)] = attempt - score;
+            const _0x267ab2 = score / qBook[_0xf6953c(0xc4)] * 0x64,
+                _0x323747 = _0x267ab2[_0xf6953c(0xad)](0x0);
+            document[_0xf6953c(0xac)](_0xf6953c(0xc3))[_0xf6953c(0xcb)] = _0x323747 + '\x25';
+            const _0x86e9fd = document[_0xf6953c(0xac)](_0xf6953c(0xc5)),
+                _0x143750 = document[_0xf6953c(0xac)]('\x2e\x75\x2d\x6e\x61\x6d\x65')[_0xf6953c(0xd6)];
+            document[_0xf6953c(0xac)](_0xf6953c(0xa9))[_0xf6953c(0xcb)] = _0x143750, document[_0xf6953c(0xac)](_0xf6953c(0xce))[_0xf6953c(0xcb)] = document[_0xf6953c(0xac)](_0xf6953c(0x9d))[_0xf6953c(0xd6)];
+            if (_0x323747 >= 0x64) _0x86e9fd[_0xf6953c(0xcb)] = _0xf6953c(0xa6) + _0x143750 + _0xf6953c(0xca);
+            else {
+                if (_0x323747 >= 0x5a) _0x86e9fd[_0xf6953c(0xcb)] = '\x4e\x69\x63\x65\x20' + _0x143750 + _0xf6953c(0xca);
+                else {
+                    if (_0x323747 >= 0x3c) _0x86e9fd[_0xf6953c(0xcb)] = _0xf6953c(0xbd) + _0x143750 + '\x2c\x20\x44\x6f\x6e\x27\x74\x20\x53\x74\x6f\x70\x20\x53\x74\x75\x64\x79\x69\x6e\x67\x2e';
+                    else {
+                        if (_0x323747 >= 0x28) _0x86e9fd['\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c'] = _0xf6953c(0xb7) + _0x143750 + _0xf6953c(0xb8);
+                        else _0x323747 >= 0x14 ? _0x86e9fd['\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c'] = '\x4f\x6b\x20' + _0x143750 + '\x2c\x20\x42\x75\x74\x20\x59\x6f\x75\x20\x4e\x65\x65\x64\x20\x54\x6f\x20\x44\x6f\x20\x42\x65\x74\x74\x65\x72\x2e' : _0x86e9fd[_0xf6953c(0xcb)] = _0xf6953c(0xc7) + _0x143750 + _0xf6953c(0xc6);
+                    }
+                }
+            }
+        }
+
+        function resetQuiz() {
+            attempt = 0x0, score = 0x0, number = 0x0, myArray = [];
+        }
+
+        function quizOver() {
+            const _0x450421 = _0xdcee41;
+            nextQuestionBtn[_0x450421(0xcc)][_0x450421(0xb5)](_0x450421(0xc2)), seeResultBtn[_0x450421(0xcc)][_0x450421(0xc8)](_0x450421(0xc2));
+        }
+        seeResultBtn[_0xdcee41(0xab)](_0xdcee41(0xd4), () => {
+            const _0xd925e4 = _0xdcee41;
+            quizBox[_0xd925e4(0xcc)][_0xd925e4(0xb5)](_0xd925e4(0xc2)), seeResultBtn[_0xd925e4(0xcc)]['\x72\x65\x6d\x6f\x76\x65']('\x73\x68\x6f\x77'), quizOverBox[_0xd925e4(0xcc)][_0xd925e4(0xc8)](_0xd925e4(0xc2)), quizResult();
+        }), startAgainQuizBtn['\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72'](_0xdcee41(0xd4), () => {
+            const _0x281ca9 = _0xdcee41;
+            quizBox['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74']['\x61\x64\x64'](_0x281ca9(0xc2)), quizOverBox[_0x281ca9(0xcc)][_0x281ca9(0xb5)](_0x281ca9(0xc2)), resetQuiz(), nextQuestion();
+        }), goHomeBtn['\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72'](_0xdcee41(0xd4), () => {
+            const _0x332eb9 = _0xdcee41;
+            quizOverBox['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74'][_0x332eb9(0xb5)](_0x332eb9(0xc2)), quizHomeBox[_0x332eb9(0xcc)][_0x332eb9(0xc8)](_0x332eb9(0xc2)), resetQuiz();
+        }), startQuizBtn['\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72'](_0xdcee41(0xd4), () => {
+            const _0x10c92d = _0xdcee41;
+            quizHomeBox['\x63\x6c\x61\x73\x73\x4c\x69\x73\x74'][_0x10c92d(0xb5)]('\x73\x68\x6f\x77'), quizBox[_0x10c92d(0xcc)]['\x61\x64\x64'](_0x10c92d(0xc2)), nextQuestion();
+        });
+        qBook = [{
+            question: `Which number should come next in this pattern: 8, 16, 32, ?`,
+            options: [`40`, `90`, `64`, `48`],
+            answer: 2,
+            description: `It's 64!  Each number in the pattern is being doubled.`
+        }, {
+            question: `When counting from 1–100, how many times will you come across the number 7?`,
+            options: [`18`, `20`, `19`, `25`],
+            answer: 1,
+            description: `20 times! Here they are: 7, 17, 27, 37, 47, 57, 67, 70, 71, 72, 73, 74, 75, 76, 77 (there are two in that one), 78, 79, 87, and 97.`
+        }, {
+            question: `Which of these numbers is not prime?`,
+            options: [`89`, `127`, `313`, `297`],
+            answer: 3,
+            description: `297 is not a prime number! It's divisible by 3. (Example: 99 x 3 = 297)`
+        }, {
+            question: `The day before the day before yesterday is three days after Saturday. What day is it today?`,
+            options: [`Monday`, `Saturday`, `sunday`, `Friday`],
+            answer: 3,
+            description: `It's Friday! Let's break down the prompt: "The day before the day before yesterday" = three days ago. "Three days after Saturday" = Tuesday. Therefore, three days after Tuesday = Friday.`
+        }, {
+            question: `How many corners are there in a cube?`,
+            options: [`8`, `5`, `2`, `6`],
+            answer: 0,
+            description: `There are 8 corners in a cube.`
+        }, {
+            question: `If 3 + 5 = 9 and 5 + 5 = 10, what does 3 equal?`,
+            options: [`2`, `4`, `8`, `9`],
+            answer: 1,
+            description: `In this case, 3 would equal 4. The second equation proves that 5 holds its standard value of 5. Therefore, if you subtract 5 from 9 in that first equation, it reveals that 3 is actually equal to 4.`
+        }, {
+            question: `Which number comes next in this pattern: 3, 4, 7, 11, 18, ?`,
+            options: [`22`, `25`, `16`, `29`],
+            answer: 3,
+            description: `It's 29! Each number is the sum of itself and the previous number (example: 7 + 11 = 18, so 11 + 18 = 29).`
+        }, {
+            question: `How many months have 28 days in them?`,
+            options: [`12`, `1`, `2`, `6`],
+            answer: 0,
+            description: `All 12 months have 28 days. Most even have more.`
+        }, {
+            question: `A farmer has 27 sheep. All but 10 of them die. How many sheep does she have left?`,
+            options: [`0`, `17`, `10`, `27`],
+            answer: 2,
+            description: `If all but 10 die, that means she has 10 sheep left!`
+        }, {
+            question: `Give the place value of 6 in the number 361,489.`,
+            options: [`60`, `60,000`, `600`, `6000`],
+            answer: 1,
+            description: `The place value is 60,000!`
+        }, {
+            question: `Take 2,000. Now add 140 to it. Take away 30, and add another 80. Now add 440. Finally, take away 16. What's your final total?`,
+            options: [`2630`, `2111`, `2614`, `2630`],
+            answer: 2,
+            description: `It's 2,614! 2,000 + 140 = 2,140. 2,140 – 30 = 2,110. 2,110 + 80 = 2,190. 2,190 + 440 = 2,630. 2,630 – 16 = 2,614.`
+        }, {
+            question: `Your sock drawer has 24 white socks and 24 blue socks in it. How many times will you need to reach inside the drawer and take out a sock to guarantee a matching pair?`,
+            options: [`Three`, `Two`, `Eight`, `Four`],
+            answer: 0,
+            description: `Three times! It's possible to get a match on only the second time, but you're guaranteed a match on your third attempt.`
+        }, {
+            question: `And how many total squares are there on a standard chess board?`,
+            options: [`64`, `200`, `90`, `204`],
+            answer: 3,
+            description: `There are 204 total squares on a chess board! While there are only 64 individual tiles, those tiles can be combined to make larger squares, equaling 204 total squares.`
+        }, {
+            question: `Which number should come next in this series? 10, 17, 26, 37, ?`,
+            options: [`50`, `40`, `55`, `80`],
+            answer: 0,
+            description: `Correct answer: 50`
+        }, {
+            question: `Riya ranked 8th from the top & 26th from the bottom in a class. How many students are there in the class?`,
+            options: [`33`, `30`, `12`, `17`],
+            answer: 0,
+            description: `Answer:33`
+        }, {
+            question: `How many zeros are there in One Trillion`,
+            options: [`10`, `11`, `12`, `9`],
+            answer: 2,
+            description: `Answer: 12 Zeros (1,000,000,000,000)`
+        }, {
+            question: ` Find the missing number in the series 5, 10, 17, _, 37, 50, 65, 82`,
+            options: [`26`, `22`, `35`, `30`],
+            answer: 0,
+            description: `Answer: 26`
+        }, {
+            question: `Which is the smallest Perfect Number`,
+            options: [`4`, `2`, `6`, `5`],
+            answer: 2,
+            description: `Answer: 6`
+        }, {
+            question: ` Write the next number of the following Sequences 1, 1, 2, 3, 5, 8, 13,_?`,
+            options: [`21`, `22`, `25`, `29`],
+            answer: 0,
+            description: `Answer: 21`
+        }, {
+            question: `What is the average of the first 50 natural numbers`,
+            options: [`25`, `22`, `25.5`, `26`],
+            answer: 2,
+            description: `Answer: 25.5`
+        }]
+
+        function addTimer() {
+            let timeLimit = 60;
+            remainingTime.innerHTML = timeLimit;
+            remainingTime.classList.remove("less-time");
+            interval = setInterval(() => {
+                timeLimit--;
+                if (timeLimit < 10) {
+                    timeLimit = "0" + timeLimit;
+                }
+                if (timeLimit < 10) {
+                    remainingTime.classList.add("less-time");
+                }
+                remainingTime.innerHTML = timeLimit;
+                if (timeLimit == 0) {
+                    clearInterval(interval);
+                    timeIsUp();
+                }
+            }, 1000)
+        }
+
+        function stopTimer() {
+            clearInterval(interval);
+        }
+    </script>
+    <section class="text-gray-600 body-font relative" style="user-select: auto;">
+        <div class="container px-5 py-24 mx-auto" style="user-select: auto;">
+            <div class="flex flex-col text-center w-full mb-12" style="user-select: auto;">
+            </div>
+            <div class="lg:w-1/2 md:w-2/3 mx-auto" style="user-select: auto;">
+                <div class="flex flex-wrap -m-2" style="user-select: auto;">
+
+
+                    <div class="p-2 w-full" style="user-select: auto;">
+                        <div class="relative" style="user-select: auto;">
+                            <label for="message" class="leading-7 text-sm text-gray-600" style="user-select: auto;"></label>
+                            <textarea id="message" name="message" placeholder="You may use this area to workout the problems.." class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                                style="user-select: auto;"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

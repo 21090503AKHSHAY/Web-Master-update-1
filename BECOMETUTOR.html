@@ -1,0 +1,667 @@
+<html>
+
+<head>
+    <title>
+        BECOME TUTOR
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="favicon" href="assets/logo_newwwwwwwwwwww-removebg-preview.png" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="icon" type="favicon" href="assets/logo_newwwwwwwwwwww-removebg-preview.png" />
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="home.css" />
+    <script src="index.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <!--favicon -->
+    <link rel="icon" type="favicon" href="apple-touch-icon.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!--favicon over-->
+    <style>
+        /* Full-width input fields */
+        
+        input[type=text],
+        input[type=password],
+        input[type=tel],
+        input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        /* Extra styles for the cancel button */
+        
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+        /* Center the image and position the close button */
+        
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+        
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+        
+        .container {
+            padding: 16px;
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+        }
+        /* Modal Content/Box */
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+        /* The Close Button (x) */
+        
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+        /* Add Zoom Animation */
+        
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+        
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+        
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+        /* Change styles for span and cancel button on extra small screens */
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="brand"><a href="/home.html">Web Master</a></div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#paidcourse">Paid Courses</a></li>
+                <li><a href="bookdemoclass.html">Book Your Demo</a></li>
+
+                <li><a href="">Become Tutor</a></li>
+
+            </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#paidcourse">Paid Courses</a></li>
+                <li><a href="bookdemoclass.html">Book Your Demo</a></li>
+
+                <li><a href="">Become Tutor</a></li>
+
+            </ul>
+        </div>
+    </header><br><br>
+    <!--<section class="text-gray-600 body-font" style="user-select: auto;">
+        <div class="container px-5 py-24 mx-auto flex flex-col" style="user-select: auto;text-align: center;column-count: 2;">
+            <div>
+                <img src="assets/become tutor-removebg-preview.png" alt="BECOME TUTOR IMAGE " />
+            </div>
+            <div>
+                <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" style="user-select: auto;">Button</button>
+            </div>
+        </div>
+    </section>-->
+    <section class="text-gray-600 body-font" style="user-select: auto;">
+        <div class="container px-5 py-24 mx-auto" style="user-select: auto;">
+            <div class="flex flex-col text-center w-full mb-20" style="user-select: auto;">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style="user-select: auto;color:#6148BF;">Advantages of Teaching Languages Online</h1>
+            </div>
+            <div class="flex flex-wrap -m-2" style="user-select: auto;">
+                <div class="p-2 lg:w-1/3 md:w-1/2 w-full" style="user-select: auto;">
+                    <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style="user-select: auto;">
+                        <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="assets/icons8-money-96-removebg-preview.png" alt="MONEY-IMAGE" style="user-select: auto;">
+                        <div class="flex-grow" style="user-select: auto;">
+                            <h2 class="text-gray-900 title-font font-medium" style="user-select: auto;">Make money</h2>
+                            <p class="text-gray-500" style="user-select: auto;">
+                                Earn upto 2000 USD/month and get hassle-free payout, directly into your bank account.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 lg:w-1/3 md:w-1/2 w-full" style="user-select: auto;">
+                    <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style="user-select: auto;">
+                        <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="assets/icons8-time-96-removebg-preview (1).png" alt="CLOCK IMG" style="user-select: auto;">
+                        <div class="flex-grow" style="user-select: auto;">
+                            <h2 class="text-gray-900 title-font font-medium" style="user-select: auto;">Teach anytime</h2>
+                            <p class="text-gray-500" style="user-select: auto;">
+                                Choose the most suitable times to teach. It is up to you how much you want to work.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 lg:w-1/3 md:w-1/2 w-full" style="user-select: auto;">
+                    <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style="user-select: auto;">
+                        <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="assets/icons8-hard-working-96-removebg-preview (1).png" alt="A MAN  IS WORKING" style="user-select: auto;">
+                        <div class="flex-grow" style="user-select: auto;">
+                            <h2 class="text-gray-900 title-font font-medium" style="user-select: auto;">Work from anywhere</h2>
+                            <p class="text-gray-500" style="user-select: auto;">
+                                Work from home or anywhere you are. Choose your convenient place and start teaching.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 lg:w-1/3 md:w-1/2 w-full" style="user-select: auto;">
+                    <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style="user-select: auto;">
+                        <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="assets/icons8-tune-96-removebg-preview (1).png" alt="SET-OWN PRICE" style="user-select: auto;">
+                        <div class="flex-grow" style="user-select: auto;">
+                            <h2 class="text-gray-900 title-font font-medium" style="user-select: auto;">Set your own Price</h2>
+                            <p class="text-gray-500" style="user-select: auto;">
+                                Get full control over your tutoring price. Set your own per hour lesson prices whenever you want.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 lg:w-1/3 md:w-1/2 w-full" style="user-select: auto;">
+                    <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style="user-select: auto;">
+                        <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="assets/icons8-location-96-removebg-preview (1).png" alt="LOCATION-ICON" style="user-select: auto;">
+                        <div class="flex-grow" style="user-select: auto;">
+                            <h2 class="text-gray-900 title-font font-medium" style="user-select: auto;">Make global connections</h2>
+                            <p class="text-gray-500" style="user-select: auto;">
+                                Build your own brand and make a global impact by reaching to the students worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 lg:w-1/3 md:w-1/2 w-full" style="user-select: auto;">
+                    <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style="user-select: auto;">
+                        <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="assets/icons8-online-support-96.png" alt="SUPPORT STAFF " style="user-select: auto;">
+                        <div class="flex-grow" style="user-select: auto;">
+                            <h2 class="text-gray-900 title-font font-medium" style="user-select: auto;">Get live support</h2>
+                            <p class="text-gray-500" style="user-select: auto;">Tutor Happiness is Our Goal. Get in touch with our live chat support for any query.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <br><br> <br><br>
+
+
+
+    <section class="text-gray-600 body-font" style="user-select: auto;">
+
+        <div class="container px-5 py-24 mx-auto flex flex-wrap" style="user-select: auto;">
+            <div class="flex flex-col text-center w-full mb-20" style="user-select: auto;">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style="user-select: auto;color:#6148BF;">How to start online tutoring with Web Master?</h1>
+            </div>
+            <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto" style="user-select: auto;">
+                <div class="h-full w-6 absolute inset-0 flex items-center justify-center" style="user-select: auto;">
+                    <div class="h-full w-1 bg-gray-200 pointer-events-none" style="user-select: auto;"></div>
+                </div>
+                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm" style="user-select: auto;">1</div>
+                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row" style="user-select: auto;">
+                    <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center" style="user-select: auto;">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24" style="user-select: auto;">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" style="user-select: auto;"></path>
+                </svg>
+                    </div>
+                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0" style="user-select: auto;">
+                        <h2 class="font-medium title-font text-gray-900 mb-1 text-xl" style="user-select: auto;">Register as tutor</h2>
+                        <p class="leading-relaxed" style="user-select: auto;">Register yourself, complete the required steps and submit your tutor application.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto" style="user-select: auto;">
+                <div class="h-full w-6 absolute inset-0 flex items-center justify-center" style="user-select: auto;">
+                    <div class="h-full w-1 bg-gray-200 pointer-events-none" style="user-select: auto;"></div>
+                </div>
+                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm" style="user-select: auto;">2</div>
+                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row" style="user-select: auto;">
+                    <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center" style="user-select: auto;">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24" style="user-select: auto;">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" style="user-select: auto;"></path>
+                </svg>
+                    </div>
+                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0" style="user-select: auto;">
+                        <h2 class="font-medium title-font text-gray-900 mb-1 text-xl" style="user-select: auto;">
+                            Get Approved</h2>
+                        <p class="leading-relaxed" style="user-select: auto;">We will review your tutor application to see if you're a good fit for our community.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto" style="user-select: auto;">
+                <div class="h-full w-6 absolute inset-0 flex items-center justify-center" style="user-select: auto;">
+                    <div class="h-full w-1 bg-gray-200 pointer-events-none" style="user-select: auto;"></div>
+                </div>
+                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm" style="user-select: auto;">3</div>
+                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row" style="user-select: auto;">
+                    <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center" style="user-select: auto;">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24" style="user-select: auto;">
+                  <circle cx="12" cy="5" r="3" style="user-select: auto;"></circle>
+                  <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3" style="user-select: auto;"></path>
+                </svg>
+                    </div>
+                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0" style="user-select: auto;">
+                        <h2 class="font-medium title-font text-gray-900 mb-1 text-xl" style="user-select: auto;">Get student's Requests</h2>
+                        <p class="leading-relaxed" style="user-select: auto;">Students will contact you via Evopry or directly will book a lesson on your available time slot.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex relative pb-10 sm:items-center md:w-2/3 mx-auto" style="user-select: auto;">
+                <div class="h-full w-6 absolute inset-0 flex items-center justify-center" style="user-select: auto;">
+                    <div class="h-full w-1 bg-gray-200 pointer-events-none" style="user-select: auto;"></div>
+                </div>
+                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm" style="user-select: auto;">4</div>
+                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row" style="user-select: auto;">
+                    <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center" style="user-select: auto;">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24" style="user-select: auto;">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" style="user-select: auto;"></path>
+                  <circle cx="12" cy="7" r="4" style="user-select: auto;"></circle>
+                </svg>
+                    </div>
+                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0" style="user-select: auto;">
+                        <h2 class="font-medium title-font text-gray-900 mb-1 text-xl" style="user-select: auto;">Start teaching</h2>
+                        <p class="leading-relaxed" style="user-select: auto;">Meet online to the student on skype and get paid helping them to reach their potential goal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--<section class="text-gray-600 body-font" style="user-select: auto;">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center" style="user-select: auto;">
+            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center" style="user-select: auto;">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" style="user-select: auto;">Requirements to Become an <span style="color:6148bf">Web Master</span> Tutor
+
+
+                </h1>
+                <ul>
+                    <li> Commitment</li><br>
+                    <li>Passion to Teach</li><br>
+                    <li> Fluent in English</li><br>
+                    <li> Bachelor’s Degree</li><br>
+                    <li> Fast Internet Connection</li><br>
+                    <li> Good communication skills</li><br>
+
+                </ul>
+
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6" style="user-select: auto;">
+                <img class="object-cover object-center rounded" alt="hero" src="assets/tech.png" style="user-select: auto;  border-radius: 25px;">
+            </div>
+        </div>
+    </section>--><br><br><br><br>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="text-center mb-20">
+                <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Requirements to Become an <span style="color:6148bf">Web Master</span> Tutor
+                </h1>
+            </div>
+            <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+                <div class="p-2 sm:w-1/2 w-full">
+                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                        <span class="title-font font-medium">Commitment</span>
+                    </div>
+                </div>
+                <div class="p-2 sm:w-1/2 w-full">
+                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                        <span class="title-font font-medium">Passion to Teach</span>
+                    </div>
+                </div>
+                <div class="p-2 sm:w-1/2 w-full">
+                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                        <span class="title-font font-medium"> Fluent in English</span>
+                    </div>
+                </div>
+                <div class="p-2 sm:w-1/2 w-full">
+                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                        <span class="title-font font-medium">Fast Internet Connection</span>
+                    </div>
+                </div>
+                <div class="p-2 sm:w-1/2 w-full">
+                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                        <span class="title-font font-medium">Good communication skills</span>
+                    </div>
+                </div>
+                <div class="p-2 sm:w-1/2 w-full">
+                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                        <span class="title-font font-medium">Bachelor’s Degree</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br><br><br><br>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="earthgif" src="600px-Rotating_earth_(huge).gif">
+            <div class="text-center lg:w-2/3 w-full">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" style="color:#6148BF;font-weight: bolder;">We are worldwide</h1>
+                <p class="mb-8 leading-relaxed">We offer online tutoring jobs in a variety of foreign languages and subjects.</p>
+                <div class="flex justify-center">
+                    <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">20+ Courses</button>
+                    <button class="ml-4 inline-flex text-white-700 bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style="color:white">5+ subjects</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap">
+            <div class="lg:w-2/3 mx-auto">
+                <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
+                    <img alt="gallery" class="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="assets/6148bf (1).png">
+                    <div class="text-center relative z-10 w-full">
+                        <p class="leading-relaxed">Become an online tutor today!.</p>
+                        <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>--><br><br><br><br>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap">
+            <div class="lg:w-2/3 mx-auto">
+                <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
+                    <img alt="gallery" class="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="assets/newbg1.png">
+                    <div class="text-center relative z-10 w-full">
+                        <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">Ready to teach online with Web Master?</h2>
+                        <p class="leading-relaxed">Become an online tutor today!.</p><br>
+                        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;font-size: 26px;" class="mt-3 text-indigo-500 inline-flex items-center">Apply Now
+                  <!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>-->
+                  
+                </button>
+                        <div id="id01" class="modal">
+
+                            <form class="modal-content animate" action="https://formsubmit.co/webmasteroffcial@gmail.com" method="post">
+                                <div class="imgcontainer">
+                                    <h2> <span style="font-size: 32px;">
+                                 <b><span style="font-size: 39px;color:#6148BF" >Sign up </span>as Tutor</b>
+                                        </span>
+                                        <br> <b>Our believe is to bring learning to people instead of people to learning.</b></h2>
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                    <!--<img src="img_avatar2.png" alt="Avatar" class="avatar">-->
+                                </div>
+
+                                <div class="container">
+                                        <input type="text" placeholder="Enter Firstname" name="fname" required>
+                                        <input type="text" placeholder="Enter Lastname" name="lname" required>
+                                        <input type="email" placeholder="Enter E-mail" name="email" required>
+                                        <input type="tel" placeholder="Enter Phone Number" name="lname" required><br><br>
+                                        <!--<input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_next" value="http://127.0.0.1:5501/">-->
+                                        <h5>By logging in or creating an account, you agree to Web Master’s <a href="" target="_blank"><u style="color:#6148BF">Terms of service & Privacy Policy</u></a></h5><br>
+                                        <button type="submit"  class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" style="user-select: auto;">Submit</button>
+
+                                        <!--<div class="container" style="background-color:#f1f1f1">
+                                            <button type="submit" class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" style="user-select: auto;">Submit</button>
+
+                                        </div>-->
+                                    
+       <!--<div class="container">
+        <form action="https://formsubmit.co/harsithharsith217@gmail.com" method="post">
+            <h3>Get In Touch</h3>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email id" required>
+            <textarea  name="message"  rows="4" placeholder="How can we help you?"></textarea>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+            <button type="submit">Send</button>
+        </form>
+    </div>-->
+                                    <!--<form action="https://formsubmit.co/your@email.com" method="POST">
+                                            <input type="text" name="name" required>
+                                            <input type="email" name="email" required>
+                                             <button type="submit">Send</button>
+                                     </form>-->
+
+                                </div>
+
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <br><br><br>
+        <footer class="text-gray-600 body-font" style="user-select: auto;">
+            <div class="container px-5 py-24 mx-auto" style="user-select: auto;">
+                <div class="flex flex-wrap md:text-left text-center order-first" style="user-select: auto;">
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4" style="user-select: auto;">
+                        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" style="user-select: auto;">Menu</h2>
+                        <nav class="list-none mb-10" style="user-select: auto;">
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">FAQ</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">About</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">Contact</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">Become Tutor</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4" style="user-select: auto;">
+                        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" style="user-select: auto;">Courses</h2>
+                        <nav class="list-none mb-10" style="user-select: auto;">
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">Free Courses</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">Paid Courses</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">General Courses</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">Logical Thinking</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4" style="user-select: auto;">
+                        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" style="user-select: auto;">Products</h2>
+                        <nav class="list-none mb-10" style="user-select: auto;">
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">Tutor</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">Testimonial</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">Create Website</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="text-gray-600 hover:text-gray-800" style="user-select: auto;">Why Web Master?</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4" style="user-select: auto;">
+                        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" style="user-select: auto;">Newsletter</h2>
+                        <div class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start" style="user-select: auto;">
+                            <div class="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2" style="user-select: auto;">
+                                <form action="https://formsubmit.co/webmasteroffcial@gmail.com" method="POST">
+                                    <label for="footer-field" class="leading-7 text-sm text-gray-600" style="user-select: auto;"></label>
+                                    <input type="email" placeholder=" E-mail" id="footer-field" name="footer-field" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                        style="user-select: auto;" required>
+                            </div>
+                            <button type="submit" class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" style="user-select: auto;">Submit</button>
+                            </form>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2 md:text-left text-center" style="user-select: auto;">you will receive E-mail, if anything updated in our Website
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-100" style="user-select: auto;">
+                <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col" style="user-select: auto;">
+                    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" style="user-select: auto;">
+
+                        <span class="ml-3 text-xl" style="user-select: auto;">Web Master</span>
+                    </a>
+                    <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4" style="user-select: auto;">© 2022 Web Master —
+                        <a class="text-gray-600 ml-1" target="_blank" style="user-select: auto;">@akhshay</a>
+                    </p>
+                    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start" style="user-select: auto;">
+              <a class="text-gray-500" style="user-select: auto;">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24" style="user-select: auto;">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" style="user-select: auto;"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500" style="user-select: auto;">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24" style="user-select: auto;">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" style="user-select: auto;"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500" style="user-select: auto;">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24" style="user-select: auto;">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" style="user-select: auto;"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" style="user-select: auto;"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500" style="user-select: auto;">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24" style="user-select: auto;">
+                  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" style="user-select: auto;"></path>
+                  <circle cx="4" cy="4" r="2" stroke="none" style="user-select: auto;"></circle>
+                </svg>
+              </a>
+            </span>
+                </div>
+            </div>
+        </footer>
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </section>
+
+</body>
+
+
+</html>

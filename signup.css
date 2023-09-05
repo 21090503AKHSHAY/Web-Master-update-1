@@ -1,0 +1,241 @@
+/*body {
+    margin: 0;
+    background: #25A3FF;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1 {
+    position: relative;
+    color: #fff;
+    opacity: 0;
+    transition: .8s ease-in-out;
+  }
+  
+  #progress {
+    position: absolute;
+    background: #0069ec;
+    height: 100vh;
+    width: 0;
+    transition: width 0.2s ease-in-out;
+  }
+  
+  .center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  
+  #register {
+    background: #fff;
+    position: relative;
+    width: 410px;
+    padding: 2px 15px 20px 15px;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+    transition: transform .1s ease-in-out;
+  }
+  
+  #register.close {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: .8s ease-in-out;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0);
+  }
+  
+  .next {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 40px;
+    color: #25a3ff;
+    float: right;
+    cursor: pointer;
+  }
+  .next:hover {color: #333}
+  .wrong .next {color: #ff2d26}
+  .close .next {color: #fff}
+  
+  #inputContainer {
+    position: relative;
+    opacity: 0;
+    width: 350px;
+    margin-top: 25px;
+    transition: opacity .3s ease-in-out;
+  }
+  
+  #inputContainer input {
+    width: 100%;
+    padding: 0 5px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: 0;
+    background: transparent;
+    box-shadow:none;
+  }
+  
+  #inputLabel {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 5px;
+    transition: .2s ease-in-out;
+  }
+  
+  #inputContainer input:valid + #inputLabel {
+    top: -15px;
+    font-size: 11px;
+    font-weight: normal;
+    color: #9e9e9e;
+  }
+  
+  #inputProgress {
+    position: absolute;
+    border-bottom: 2px solid #25a3ff;
+    padding: 3px 0;
+    width: 0;
+    transition: width .6s ease-in-out;
+  }
+  
+  .wrong #inputProgress {
+    border-color: #ff2d26;
+  }*/
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to right , #090979,#00d4ff);
+}
+
+.login-signup{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background-color: black;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.login-signup h2{
+    margin-bottom: 35px;
+    color: #04eaf4;
+    padding: 0;
+    text-align: center;
+}
+
+.login-signup .user-box{
+    position: relative;
+}
+.login-signup .user-box input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 30px;
+}
+.login-signup .user-box label{
+    position: absolute;
+    color: #fff;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    padding: 10px 0;
+    pointer-events: none;
+    transition: .5s;
+}
+.login-signup .user-box input:focus ~ label , .login-signup .user-box input:valid ~ label{
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button{
+    padding: 5px 10px;
+    color: #03e9f4;
+    background-color: black;
+    border: 2px solid #03e9f4;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+h4{
+    color: #fff;
+    margin-top: 30px;
+    text-align: center;
+}
+
+h4 span{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #03e9f4;
+}
+
+.forgot-pwd h4{
+    color: #03e9f4;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.loader{
+    display: none;
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #3498db;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.user-details h1{
+    text-align: center;
+    color: #090979;
+    font-size: 60px;
+}
+
+.user-details button{
+    float: right;
+    padding: 20px 10px;
+    background-color: #090979;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-right: 40px;
+    border-radius: 20px;
+}
